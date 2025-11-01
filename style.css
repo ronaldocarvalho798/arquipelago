@@ -1,0 +1,204 @@
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    background-color: #000;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color: #000; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: opacity 1.5s ease-out, visibility 1.5s ease-out;
+}
+
+#splash-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden; 
+    pointer-events: none; 
+}
+
+.splash-content {
+    color: #f0f0f0;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.splash-content h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+.splash-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+#enter-button {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#enter-button:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+
+#main-content {
+ 
+    opacity: 0;
+    visibility: hidden;
+    
+
+    transition: opacity 1.5s ease-in 0.5s; 
+}
+
+#main-content.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#stage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#campfire-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    filter: brightness(0.7) blur(3px); 
+}
+
+
+#chronicle-panel {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    height: 85vh;
+    background-color: rgba(0, 0, 0, 0.279);
+    backdrop-filter: blur(10px);
+    color: #f0f0f0;
+    border-radius: 8px;
+    padding: 2rem 1rem 2rem 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+
+#chronicle-panel h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+
+#chronicle-panel h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    border-bottom: 1px solid #666;
+    padding-bottom: 8px;
+    margin-top: 2rem;
+}
+
+#chronicle-panel p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    padding-right: 1rem;
+    margin-bottom: 11rem;
+}
+
+
+#chronicle-panel strong {
+    color: #f0ad4e;
+    font-weight: 700;
+}
+
+
+.chapter-content {
+
+    opacity: 0;
+    
+
+    transform: translateY(30px);
+    
+
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.chapter-content.is-visible {
+
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+
+
+
+#chronicle-panel::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+#chronicle-panel::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+
+#chronicle-panel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.35); 
+    border-radius: 50rem; 
+}
+
+#chronicle-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#chronicle-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
